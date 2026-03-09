@@ -1,0 +1,33 @@
+<!ELEMENT university (address,department+, student+)>
+
+<!ELEMENT address (#PCDATA)>
+
+<!ELEMENT department (dept_name, faculty+, course+)>
+<!ATTLIST department dept_code ID #REQUIRED>
+
+<!ELEMENT dept_name (#PCDATA)>
+
+
+<!ELEMENT faculty (faculty_name, designation, email)>
+<!ATTLIST faculty phone CDATA #IMPLIED>
+
+<!ELEMENT faculty_name (#PCDATA)>
+<!ELEMENT designation (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+
+
+<!ELEMENT course (course_title, credits, semester)>
+<!ATTLIST course course_code ID #REQUIRED>
+
+<!ELEMENT course_title (#PCDATA)>
+<!ELEMENT credits (#PCDATA)>
+<!ELEMENT semester (#PCDATA)>
+
+
+<!ELEMENT student (student_name, enrolled_courses)>
+<!ATTLIST student
+    student_id ID #REQUIRED
+    dept_ref IDREF #REQUIRED>
+
+<!ELEMENT student_name (#PCDATA)>
+<!ELEMENT enrolled_courses (#PCDATA)>

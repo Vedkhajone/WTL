@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE university SYSTEM "catalog.dtd">
+
+<university>
+    <address>Kopargaon, Maharashtra</address>
+
+    <department dept_code="D1">
+        <dept_name>Electronics</dept_name>
+
+        <faculty phone="9876543210">
+            <faculty_name>Dr.XYZ</faculty_name>
+            <designation>Professor</designation>
+            <email>xyz@gmail.com.com</email>
+        </faculty>
+
+        <faculty>
+            <faculty_name>Prof. ABC</faculty_name>
+            <designation>Assistant Professor</designation>
+            <email>abc@gmail.com.com</email>
+        </faculty>
+
+        <course course_code="C1">
+            <course_title>Java</course_title>
+            <credits>4</credits>
+            <semester>3</semester>
+        </course>
+
+        <course course_code="C2">
+            <course_title>DBMS</course_title>
+            <credits>3</credits>
+            <semester>5</semester>
+        </course>
+
+    </department>
+
+   
+    <student student_id="S1" dept_ref="D1">
+        <student_name>Pradnya</student_name>
+        <enrolled_courses>C1,C2</enrolled_courses>
+    </student>
+
+
+</university>
