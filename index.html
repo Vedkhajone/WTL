@@ -103,10 +103,59 @@
         .card-text span {
             font-size: 12px;
         }
+        .slider {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+}
+
+.slides {
+    width: 100%;
+    height: 100%;
+}
+
+.slide {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ACTIVE SLIDE */
+.slide.active {
+    display: block;
+}
+
+/* BOTTOM TEXT */
+.caption {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 15px;
+    background: rgba(0,0,0,0.5);
+    color: white;
+    font-size: 18px;
+}
 
     </style>
 </head>
+<script>
+let slides = document.querySelectorAll(".slide");
+let i = 0;
 
+setInterval(() => {
+    slides[i].classList.remove("active");
+    i = (i + 1) % slides.length;
+    slides[i].classList.add("active");
+}, 3000);
+</script>
 <body>
 
 <!-- NAVBAR -->
@@ -115,7 +164,34 @@
     <input type="text" class="search-box" placeholder="Search events...">
     <a href="admin_login.html" class="login">Admin Login</a>
 </div>
+<div class="slider">
 
+    <div class="slides">
+
+        <div class="slide active">
+            <img src="sample.jpg">
+            <div class="caption">
+                AI Workshop – Learn Future Tech
+            </div>
+        </div>
+
+        <div class="slide">
+            <img src="sample.jpg">
+            <div class="caption">
+                Cultural Fest – Music & Dance Night
+            </div>
+        </div>
+
+        <div class="slide">
+            <img src="sample.jpg">
+            <div class="caption">
+                Sports Meet – Compete & Win
+            </div>
+        </div>
+
+    </div>
+
+</div>
 <!-- CATEGORIES -->
 <div class="categories">
     <div class="cat">Tech</div>
@@ -131,7 +207,7 @@
     <div class="cards">
 
         <div class="card">
-            <img src="https://source.unsplash.com/300x200/?technology">
+            <img src="sample.jpg">
             <div class="card-text">
                 <h3>AI Workshop</h3>
                 <span>25 March</span>
@@ -139,7 +215,7 @@
         </div>
 
         <div class="card">
-            <img src="https://source.unsplash.com/300x200/?music">
+            <img src="sample.jpg">
             <div class="card-text">
                 <h3>Cultural Fest</h3>
                 <span>5 April</span>
@@ -147,7 +223,7 @@
         </div>
 
         <div class="card">
-            <img src="https://source.unsplash.com/300x200/?sports">
+            <img src="sample.jpg">
             <div class="card-text">
                 <h3>Sports Meet</h3>
                 <span>15 April</span>
